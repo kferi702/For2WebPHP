@@ -13,8 +13,8 @@ session_start();
     </head>
     <body>
         <!--Navigációs menü-->
-        <div class="sidenav">
-            <a class="nav_item" href="#index">Kezdőlap</a>
+        <div class="sidenav" id="nav">
+            <a class="nav_item" href="php/home.php">Kezdőlap</a>
             <a class="nav_item" href="php/patient.php">Adatlap</a>
             <a class="nav_item" href="php/visits.php">Kórtörténet</a>
             <a class="nav_item" href="php/message.php">Üzenetek</a>
@@ -34,23 +34,20 @@ session_start();
             ?>
         </div> 
         <!--Maga az oldal-->
-        <div class="main">
-
-<?php
-if (isset($_SESSION['unauthorized']) && $_SESSION['unauthorized']) {
-    $error = file_get_contents('html/unauthorized.html');
-    echo $error;
-    unset($_SESSION['unauthorized']);
-}
-if (isset($_SESSION['id']) && isset($_SESSION['patient'])) {
-    echo $_SESSION['patient'];
-} else {
-    die();
-}
-?>
+        <div class="main_content">
+            <?php
+            if (isset($_SESSION['unauthorized']) && $_SESSION['unauthorized']) {
+                $error = file_get_contents('html/unauthorized.html');
+                echo $error;
+                unset($_SESSION['unauthorized']);
+            }
+            if (isset($_SESSION['id']) /* && isset($_SESSION['patient']) */) {
+                echo $_SESSION['set_page'];
+            } else {
+                echo $_SESSION['home'];
+                die();
+            }
+            ?>
         </div>
-
-
-
     </body>
 </html>

@@ -84,10 +84,9 @@ if (isset($_SESSION['id']))
     $stmt->close();
     
     
-    $_SESSION['patient'] = $table;
+    $_SESSION['set_page']=$_SESSION['patient'] = $table;
     header('Location: ../index.php');
 } else {
-    $id = "Hiba az adatbázis betöltésében!";
     header('Location: ../index.php');
     die();
 }

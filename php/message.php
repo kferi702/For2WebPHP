@@ -1,9 +1,15 @@
-<?php 
-session_start(); 
+<?php
+session_start();
 require_once ('..//config/unauthorized.php');
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
+if(isset($_SESSION['id'])){
+$id=$_SESSION['id'];
+
+$visits="Üzenetek";
+
+$_SESSION['set_page']=$_SESSION['visits']=$visits;
+header('Location: ../index.php');
+}else{
+    header('Location: ../index.php');
+    die();
+}

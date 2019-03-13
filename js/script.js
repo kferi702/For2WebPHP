@@ -1,7 +1,6 @@
 $(document).ready(function() {
     drop();
-    //isSetPatient();
-});
+});dddddddddddddd
 function drop(){
 var dropdown = document.getElementsByClassName("dropdown-btn");
 var i;
@@ -17,11 +16,3 @@ for (i = 0; i < dropdown.length; i++) {
   });
 }
 };
-//function isSetPatient(){
-//    if (!$_SESSION['patient']) {
-//
-//    } else {
-//      alert('work')
-//      location.href = 'lol.html';
-//  }
-//  };
