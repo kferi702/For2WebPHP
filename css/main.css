@@ -1,72 +1,111 @@
+body{
+    margin: 0;
+    background-image: url(../bg-image.png);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 /*Navigációs sáv*/
 .sidenav {
-  height: 100%;
-  width: 200px;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #b9e8e5;
-  overflow-x: hidden;
-  padding-top: 20px;
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    /*background-color: #b9e8e5;*/
+    background-image: url(../bg-image.png);
+    background-position: left;
+    overflow-x: hidden;
+    padding-top: 20px;
 }
 .sidenav .nav_item,.sidenav a, .dropdown-btn {
-  padding: 6px 8px 6px 16px;
-  text-decoration: none;
-  font-size: 20px;
-  font-family: Verdana, Geneva, sans-serif;
-  color: #818181;
-  display: block;
-  border: none;
-  background: none;
-  width:100%;
-  text-align: left;
-  cursor: pointer;
-  outline: none;
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: Verdana, Geneva, sans-serif;
+    color: #818181;
+    display: block;
+    border: none;
+    background: none;
+    width:100%;
+    text-align: left;
+    cursor: pointer;
+    outline: none;
+}
+.nav_item{
+    text-align: center;
+    height: 10%;
+    transition-duration: 0.8s;
 }
 .sidenav a:hover, .dropdown-btn:hover {
-  background-color: #86d8d3;
+    background-color: #86d8d3;
     color: #596b6a;
 }
 .active {
-  background-color: #86d8d3;
-  color: #818181;
+    background-color: #86d8d3;
+    color: #818181;
 }
 .dropdown-container {
-  display: none;
-  background-color: #b9e8e5;
-  padding-left: 8px;
+    display: none;
+    background-color: #b9e8e5;
+    padding-left: 8px;
 }
 .fa-caret-down {
-  float: right;
-  padding-right: 8px;
+    float: right;
+    padding-right: 8px;
 }
 .nav_item_box{
-  font-size:18px;
-  margin: 6px 0px 0px 0px;
-  display:block;
-  width:180px;
-  border:none;
-  border-bottom:1px solid #757575;
-  border-radius: 40px;
+    font-size:18px;
+    margin: 6px 0px 0px 0px;
+    display:block;
+    width:180px;
+    border:none;
+    border-bottom:1px solid #757575;
+    border-radius: 40px;
 }
 /*A body többi része*/
 .main_content {
-  margin-left: 200px; /* Same as the width of the sidenav */
-  font-size: 20px; /* Increased text to enable scrolling */
-  padding: 0px 10px;
+    margin: 0;
+    margin-left: 190px; /* Same as the width of the sidenav */
+    font-size: 20px; /* Increased text to enable scrolling */
+    padding: 0px 10px;
+}
+.parallax{
+    background-image: url(../bg-image.png);
+    height: 20%; 
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 /*Adatlap táblázata*/
 table, td {
-  border: 1px solid black;
-  border-collapse: collapse;
+    border: 1px solid black;
+    border-collapse: collapse;
 }
 table{
+    margin: 50px;
+    background-color: darkgray;
     width: 60%;
+}  
+tr{
+    height: 30px;
 }
-td #tn{
+#tn{
     width: 40%;
 }
-td #tv{
+#tv{
     width: 60%;
+}
+/*Kórtörténet látogatások*/
+#vis_text{
+    padding-left: 20%;
+}
+#visits{
+    height:200px;
+    padding: 0 30px;
+    margin: 0 20px;
+    background-color: aquamarine;
 }

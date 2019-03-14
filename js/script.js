@@ -1,6 +1,6 @@
 $(document).ready(function() {
     drop();
-});dddddddddddddd
+});
 function drop(){
 var dropdown = document.getElementsByClassName("dropdown-btn");
 var i;

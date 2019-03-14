@@ -1,5 +1,6 @@
 <?php
 session_start();
+//require_once ('php/home.php');
 ?>
 <html lang="hu">
     <head>
@@ -17,7 +18,6 @@ session_start();
             <a class="nav_item" href="php/home.php">Kezdőlap</a>
             <a class="nav_item" href="php/patient.php">Adatlap</a>
             <a class="nav_item" href="php/visits.php">Kórtörténet</a>
-            <a class="nav_item" href="php/message.php">Üzenetek</a>
             <?php
             if (!isset($_SESSION['id'])) {
                 echo '<button class="dropdown-btn">Bejelentkezés<i class="fa fa-caret-down"></i></button>' .
@@ -30,6 +30,7 @@ session_start();
                 '</div>';
             } else {
                 echo '<a class="nav_item" href="php/logout.php">Kijelentkezés</a>';
+                echo '<a class="nav_item" href="php/change_pass.php">Jelszó módosítás</a>';
             }
             ?>
         </div> 

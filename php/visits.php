@@ -1,41 +1,38 @@
-<head> 
-    <script type="text/javascript" src="../js/script.js"></script>
-</head>
 <?php
+
 session_start();
 require_once ('..//config/unauthorized.php');
 
 if (isset($_SESSION['id'])) {
     $id = $_SESSION['id'];
-    $ar = array();
-    $i = 1;
-    $mappa = scandir('28');
-    $p_path= $_SERVER["PHP_SELF"];
-    foreach ($mappa as $x) {
-        if (in_array($x, array('..', '.'))) {
-            continue;
-        }
-        if (is_dir($x)) {
-            $ar[$x] = scandir($x);
-        } else {
-            $ar[] = $x;
-        }
-    }
-    echo sizeof($ar).'<br>';
-    $sor=0;
-    for ($k = 0; $k < sizeof($ar); $k++) {
-        $path='file:///E:/xampp/htdocs/FogOrvosiRendelo2/'.$id.'/'.$ar[$k];
-        $myfile = fopen($path, "r") or die("Fájl nme nyitható meg!");
-        echo fread($myfile, filesize($path)).'<br>';
-        echo $sor;
-        $sor++;
-        fclose($myfile);
-    }
+    $sql = "SELECT date, text "
+            . "FROM patient_visits "
+            . "WHERE patient_id=? ;";
+    $stmt = $connection->prepare($sql);
+    $stmt->bind_param("s", $id);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
-    $visits="<selector";
+    $visits = "<p>Megtekintheti a korábbi látogatásinak a kórtörténetét, ha esetleges kérdése merülne fel bizalommal forduljon kezelő fogorvosához!</p>";
     
-//$_SESSION['set_page']=$_SESSION['visits']=$visits;
-//header('Location: ../index.php');
+    while ($row = $result->fetch_assoc()) {
+        $date = $row['date'];
+        $text = $row['text'];
+
+        $visits .= "<p id='visits'>"
+                . $date . ":"
+                . "<br>"
+                . "<q id='vis_text'>"
+                . $text
+                . "</q>"
+                . "</p>";
+        $visits .= "<div class='parallax'></div>";
+       
+    }
+    $stmt->close();
+    
+    $_SESSION['set_page'] = $_SESSION['visits'] = $visits;
+    header('Location: ../index.php');
 } else {
     header('Location: ../index.php');
     die();
