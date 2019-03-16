@@ -1,6 +1,6 @@
 body{
     margin: 0;
-    background-image: url(../bg-image.png);
+    background-image: url(../pics/teeth-background.jpg);
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -14,42 +14,70 @@ body{
     z-index: 1;
     top: 0;
     left: 0;
-    /*background-color: #b9e8e5;*/
-    background-image: url(../bg-image.png);
+    margin-left: 20px;
+    background: transparent;
     background-position: left;
     overflow-x: hidden;
     padding-top: 20px;
+    margin-bottom: 40px;
 }
-.sidenav .nav_item,.sidenav a, .dropdown-btn {
+.sidenav .nav_item,.sidenav a, .dropdown-btn, .nav_item_box{
+    margin-bottom: 5px;
     padding: 6px 8px 6px 16px;
     text-decoration: none;
     font-size: 20px;
     font-family: Verdana, Geneva, sans-serif;
-    color: #818181;
+    color: black;
     display: block;
     border: none;
     background: none;
-    width:100%;
+    width: 170px;
     text-align: left;
     cursor: pointer;
     outline: none;
+
+    border: 2px solid #56c8ce;
 }
 .nav_item{
-    text-align: center;
     height: 10%;
-    transition-duration: 0.8s;
+    transition-duration: 1.2s;
+    border-radius: 15px 35px;
+    margin-left: 0;
+    width: 170px;
 }
 .sidenav a:hover, .dropdown-btn:hover {
     background-color: #86d8d3;
     color: #596b6a;
+    border-radius: 35px 15px;
+    width: 170px;
 }
 .active {
     background-color: #86d8d3;
     color: #818181;
 }
+#nav_patient:hover{
+    background-color: #efbc86;
+    color: black;
+    border-radius: 35px 15px;
+}
+#nav_visits:hover{
+    background-color: #91a5c6;
+    color: black;
+    border-radius: 35px 15px;
+}
+#nav_change:hover{
+    background-color: #2da6ed;
+    color: black;
+    border-radius: 35px 15px;
+}
+#nav_logout:hover{
+    background-color: #bc0707;
+    color: black;
+    border-radius: 35px 15px;
+}
 .dropdown-container {
     display: none;
-    background-color: #b9e8e5;
+    background-color: transparent;
     padding-left: 8px;
 }
 .fa-caret-down {
@@ -58,22 +86,18 @@ body{
 }
 .nav_item_box{
     font-size:18px;
-    margin: 6px 0px 0px 0px;
-    display:block;
-    width:180px;
-    border:none;
-    border-bottom:1px solid #757575;
-    border-radius: 40px;
+    margin: 6px 0px;
+    border-radius: 15px 20px;
 }
 /*A body többi része*/
 .main_content {
     margin: 0;
-    margin-left: 190px; /* Same as the width of the sidenav */
+    margin-left: 210px; /* Same as the width of the sidenav */
     font-size: 20px; /* Increased text to enable scrolling */
     padding: 0px 10px;
 }
 .parallax{
-    background-image: url(../bg-image.png);
+    background-image: url(../pics/teeth-background.jpg);
     height: 20%; 
     background-attachment: fixed;
     background-position: center;
@@ -81,31 +105,115 @@ body{
     background-size: cover;
 }
 /*Adatlap táblázata*/
-table, td {
-    border: 1px solid black;
-    border-collapse: collapse;
-}
-table{
-    margin: 50px;
-    background-color: darkgray;
-    width: 60%;
+#pat_table{
+    margin:10px;
 }  
-tr{
-    height: 30px;
+#pat_table td{
+    margin: 30px;
+    height: 50px;
+    border-bottom: 1px solid;
+}
+.pat_table{
+    border: 0;
+    margin: auto;
+    padding: 30px;
+    min-width: 450px;
+    width: 80%;
+    margin-top: 50px;
+    background-color: #efbc86;
+    border-radius: 15px 120px;
+}
+#pat_table_button{
+    background-color: #efa556;
+    font-size: 18px;
+    border-radius: 8px 17px;
+    border: none;
+}
+#pat_table_button:hover{
+    transition: 1.5s;
+    border-radius: 17px 8px;
+    background-color: #c46f15;
 }
 #tn{
+    min-width: 150px;
     width: 40%;
 }
 #tv{
+    min-width: 220px;
     width: 60%;
+}
+#pat_text_box{
+    border-style: none;
+    background-color: #9b5f1f;
+    color: white;
+    border-radius: 10px 20px;
+    width: 100%;
+    padding: 5px;
 }
 /*Kórtörténet látogatások*/
 #vis_text{
     padding-left: 20%;
 }
 #visits{
-    height:200px;
+    height:150px;
     padding: 0 30px;
     margin: 0 20px;
-    background-color: aquamarine;
+    background-color: #abe6ea;
+    border-radius: 15px 50px;
+}
+#visits-first-box{
+    padding: 20px 30px;
+    margin: 20px 20px;
+    background-color: #91a5c6;
+    border-radius: 15px 50px;
+}
+/*Bejelentkezési adatok módositása*/
+.changebox{
+    min-width: 550px;
+    padding: 20 30px;
+    margin: 20px 20px;
+    background-color: #abe6ea;
+    border-radius: 15px 50px;
+}
+#change_webdata_firstbox{
+    height:250px;
+    background-color: #2da6ed;
+}
+#change_webdata_secondbox{
+    height:130px;
+    background-color: #ad9a51;
+}
+#change_webdata_thirdbox{
+    height:100px;
+    background-color: #e57c69;
+}
+#change_webdata_changebox{
+    width: auto;
+}
+#table_webdata{
+    font-size: 18px;
+    margin: auto;
+}
+#table_webdata_button{
+    background-color: #68b775;
+    font-size: 18px;
+    border-radius: 8px 17px;
+    border: none;
+}
+#table_webdata_button:hover{
+    background-color: #1ea02f;
+    border-radius: 17px 8px;
+    transition: 1.5s;
+}
+#tab_w_text_box_un, #tab_w_text_box_pw{
+    border-style: none;
+    border-radius: 10px 20px;
+    width: 100%;
+    padding: 5px;
+}
+#tab_w_text_box_un{
+    background-color: #e5c23b;
+}
+#tab_w_text_box_pw{
+    background-color: #f75336;
 }

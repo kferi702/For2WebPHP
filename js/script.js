@@ -1,5 +1,6 @@
 $(document).ready(function() {
     drop();
+    $.get("php/home.php");
 });
 function drop(){
 var dropdown = document.getElementsByClassName("dropdown-btn");

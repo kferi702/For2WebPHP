@@ -16,21 +16,21 @@ session_start();
         <!--Navigációs menü-->
         <div class="sidenav" id="nav">
             <a class="nav_item" href="php/home.php">Kezdőlap</a>
-            <a class="nav_item" href="php/patient.php">Adatlap</a>
-            <a class="nav_item" href="php/visits.php">Kórtörténet</a>
+            <a class="nav_item" id="nav_patient" href="php/patient.php">Adatlap</a>
+            <a class="nav_item" id="nav_visits" href="php/visits.php">Kórtörténet</a>
             <?php
             if (!isset($_SESSION['id'])) {
-                echo '<button class="dropdown-btn">Bejelentkezés<i class="fa fa-caret-down"></i></button>' .
+                echo '<button class="dropdown-btn nav_item" >Bejelentkezés<i class="fa fa-caret-down"></i></button>' .
                 '<div class="dropdown-container">' .
-                '<form action="php/login.php" method="post">' .
-                '<input class="nav_item_box" type="text" placeholder="  Felhasználóinév" name="username" required/>' .
-                '<input class="nav_item_box" type="password" placeholder="  Jelszó" name="password" required/>' .
+                '<form  class="login_nav" action="php/login.php" method="post">' .
+                '<input class="nav_item_box" type="text" placeholder="Felhasználóinév" name="username" required/>' .
+                '<input class="nav_item_box" type="password" placeholder="Jelszó" name="password" required/>' .
                 '<input class="nav_item" type="submit" name="enter" value="Belépés">' .
                 '</form>' .
                 '</div>';
             } else {
-                echo '<a class="nav_item" href="php/logout.php">Kijelentkezés</a>';
-                echo '<a class="nav_item" href="php/change_pass.php">Jelszó módosítás</a>';
+                echo '<a class="nav_item" id="nav_logout" href="php/logout.php">Kijelentkezés</a>';
+                echo '<a class="nav_item" id="nav_change" href="php/change_webdata.php">Belépési Adatok módosítás</a>';
             }
             ?>
         </div> 
@@ -49,6 +49,7 @@ session_start();
                 die();
             }
             ?>
+            <img src="pics/t-heart.jpg" alt='heart' width="20px" height="20px">
         </div>
     </body>
 </html>
