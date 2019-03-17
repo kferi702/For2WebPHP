@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 require_once ('..//config/unauthorized.php');
 if (isset($_SESSION['id'])) {
@@ -12,9 +11,7 @@ if (isset($_SESSION['id'])) {
     $stmt->bind_param("s", $id);
     $stmt->execute();
     $result = $stmt->get_result();
-
-    $visits = "<div id='visits-first-box'><h2>Kórtörénet:</h2><p>Itt megtekintheti a korábbi látogatásinak a kórtörténetét, ha esetleges kérdése merülne fel bizalommal forduljon kezelő fogorvosához! Amennyiben nem jelenne meg egy darab sem azesetben vagy nem volt még egy kezelése sem vagy probléma lépett fel a rendszerben és kérjük próbálkozzon késöbb újra. </p></div>";
-    
+    $visits = file_get_contents('../html/visits_first_div_welcome.html');
     while ($row = $result->fetch_assoc()) {
         $date = $row['date'];
         $text = $row['text'];
@@ -29,7 +26,6 @@ if (isset($_SESSION['id'])) {
                 . "</q>"
                 . "</p>";
         $visits .= "<div class='parallax'></div>";
-       
     }
     $stmt->close();
     

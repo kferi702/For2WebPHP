@@ -18,14 +18,7 @@ if (isset($_SESSION['id'])) {
     //változás jelölő doboz
     $change_webdata_changebox = "<div class='changebox' id='change_webdata_changebox'>Események: ";
     //első doboz
-    $change_webdata_firstbox = "<div class='changebox' display='none' id='change_webdata_firstbox'>"
-            . "<h2>Jelszó módosítás</h2>"
-            . "<p>Itt lehetősége van az ön bejelentkezési felhasználói nevének és jelszavának módosítására. "
-            . "Amennyiben még a rendelőben eredetileg "
-            . "kapott jelszavát használja annak megváltoztatása mindenképp ajánlott. Más esetben nem "
-            . "tudjuk garantálni az ön fiókjának a biztosnágát. "
-            . "Bármi további kérdés merülne fel önben, "
-            . "bizalommal forduljon kollegáinkhoz.</p></div>";
+    $change_webdata_firstbox = file_get_contents('../html/change_webdata_welcome_box.html');
     //második doboz
     $change_webdata_secondbox = "<form class='changebox' id='change_webdata_secondbox' "
             . "action='php/change_webdata.php' method='post'>"

@@ -26,6 +26,12 @@ if (isset($_SESSION['id'])) {
     $table = "<form action='php/saveTable.php' method='post'>"
             . "<div class='pat_table'>";
 
+    if(isset($_SESSION['saveStatus'])){
+    $change=$_SESSION['saveStatus'];
+    unset($_SESSION['saveStatus']);
+    }else{
+    $change="";
+    };
     while ($row = $result->fetch_assoc()) {
         $name = $row['name'];
         $b_name = $row['birth_name'];
@@ -82,6 +88,9 @@ if (isset($_SESSION['id'])) {
                 . "<tr>"
                 . "<td colspan='2'>"
                 . "<input id='pat_table_button' type='submit' name='saveTable' value='Módosítások mentése'><td>"
+                . "</tr>"
+                . "<tr>"
+                . "<td colspan='2'>".$change."<td>"
                 . "</tr>"
                 . "</table>";
     }

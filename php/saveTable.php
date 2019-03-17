@@ -16,7 +16,7 @@ if (isset($_POST['saveTable'])){
     $stmt -> execute();
     $stmt -> close();
     $_SESSION['saveStatus']="Az adatok módisítása sikeresen megtörténet!";
-    header('Location: ../index.php');
+    header('Location: patient.php');
 }else{
     $_SESSION['saveStatus']="Az adatok nem lettek módosítva!";
     header('Location: ../index.php');
