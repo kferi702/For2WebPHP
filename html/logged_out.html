@@ -1,0 +1,14 @@
+<div class="sidenav" id="nav">
+    <a class="nav_item" href="php/home.php">Kezdőlap</a>
+    <a class="nav_item" id="nav_patient" href="php/patient.php">Adatlap</a>
+    <a class="nav_item" id="nav_visits" href="php/visits.php">Kórtörténet</a>
+    <button class="dropdown-btn nav_item" >Bejelentkezés<i class="fa fa-caret-down"></i></button>
+    <div class="dropdown-container">
+        <form  class="login_nav" action="php/login.php" method="post">
+            <input class="nav_item_box" type="text" placeholder="Felhasználóinév" name="username" required/>
+            <input class="nav_item_box" type="password" placeholder="Jelszó" name="password" required/>
+            <input class="nav_item" type="submit" name="enter" value="Belépés">
+        </form>
+    </div>
+</div>
+<div class="main_content">
