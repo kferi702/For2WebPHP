@@ -217,3 +217,29 @@ body{
 #tab_w_text_box_pw{
     background-color: #f75336;
 }
+/*Kezdőlap*/
+#home{
+    width: auto;
+    padding: 10px 20px;
+    margin: 80px 50px;
+    background-color: #dee0e8;
+    border-radius: 15px 50px;
+}
+#home_row{
+    display: flex;
+    flex-flow: row wrap;
+    background-color: #dee0e8;
+    border-radius: 15px 50px;
+    justify-content: center;
+}
+#home_row p{
+    width: auto;
+    height: auto;
+    padding: 20px 30px;
+    margin: 20px 20px;
+    background-color: #eadad0;
+    border-radius: 50px 15px;
+}
+#home h3{
+    text-align: center;
+}
